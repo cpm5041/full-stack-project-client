@@ -1,2 +1,15 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body {
+  background-image: url('http://kingofwallpapers.com/fitness-wallpaper/fitness-wallpaper-023.jpg');
+  background-size: cover;
+}
+
+.glyphicon {
+  font-size: 32px;
+      }
+
+.tracker {
+  color: #fff;
+}
