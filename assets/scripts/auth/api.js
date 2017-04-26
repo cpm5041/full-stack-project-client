@@ -36,58 +36,58 @@ const changePassword = (data) => {
     data
   })
 }
-const createGame = (data) => {
-  return $.ajax({
-    url: config.apiOrigin + '/games',
-    method: 'POST',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
-}
-// update game cells with each move
-const submitMove = (data) => {
-  return $.ajax({
-    url: config.apiOrigin + '/games/' + store.game.id,
-    method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
-}
-const indexGame = (data) => {
-  // console.log(data)
-  const game = store.game
-  return $.ajax({
-    url: config.apiOrigin + '/games/' + game.id,
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
-}
-
-const index = (data) => {
-  // console.log('inside index')
-  return $.ajax({
-    url: config.apiOrigin + '/games?over=true',
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
-}
+// const createGame = (data) => {
+//   return $.ajax({
+//     url: config.apiOrigin + '/games',
+//     method: 'POST',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
+// // update game cells with each move
+// const submitMove = (data) => {
+//   return $.ajax({
+//     url: config.apiOrigin + '/games/' + store.game.id,
+//     method: 'PATCH',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
+// const indexGame = (data) => {
+//   // console.log(data)
+//   const game = store.game
+//   return $.ajax({
+//     url: config.apiOrigin + '/games/' + game.id,
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
+//
+// const index = (data) => {
+//   // console.log('inside index')
+//   return $.ajax({
+//     url: config.apiOrigin + '/games?over=true',
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data
+//   })
+// }
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword,
-  createGame,
-  submitMove,
-  indexGame,
-  index
+  changePassword
+  // createGame,
+  // submitMove,
+  // indexGame,
+  // index
 }

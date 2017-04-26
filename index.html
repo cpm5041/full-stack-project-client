@@ -22,25 +22,25 @@
     <div class='container'>
       <div class='row well'>
         <div class='col-md-6'>
-          <form id="sign-up" class="credentials sign-up">
+          <form class="credentials sign-up">
             <i class='glyphicon glyphicon-pencil'></i>
             <fieldset>
               <legend>Sign up to get jack3d!</legend>
               <input type="text" name="credentials[userId]" value="" placeholder="User ID">
               <input type="password" name="credentials[password]" value="" placeholder="password">
               <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
-              <button type='button' class="btn btn-primary">Sign up!</button>
+              <button type='button' id="sign-up" name='submit' class="credentials btn btn-primary">Sign up!</button>
             </fieldset>
           </form>
         </div>
         <div class='col-md-6'>
-          <form id="sign-in" class="credentials">
+          <form class="credentials">
             <i class='glyphicon glyphicon-user'></i>
             <fieldset>
               <legend>Sign in!</legend>
               <input type="text" name="credentials[email]" value="" placeholder="email">
               <input type="password" name="credentials[password]" value="" placeholder="password">
-              <button type='button' class="btn">Sign in!</button>
+              <button type='button' id="sign-in" class="btn">Sign in!</button>
             </fieldset>
           </form>
         </div>
@@ -49,39 +49,41 @@
       <div class='container' style="display: none;">
         <div class='row well'>
           <div class='col-md-6'>
-            <form id="sign-out" class="credentials signOut">
+            <form class="credentials signOut">
               <i class='glyphicon glyphicon-log-out'></i>
               <fieldset>
                 <legend>Sign out!</legend>
-                <button type='button' class="btn">Sign out!</button>
+                <button id="sign-out" type='button' class="btn">Sign out!</button>
               </fieldset>
             </form>
           </div>
           <div class='col-md-6'>
-            <form id="change-password" class="credentials pw">
+            <form class="credentials pw">
               <i class='glyphicon glyphicon-wrench'></i>
               <fieldset>
                 <legend>Change Password</legend>
                 <input type="password" name="passwords[old]" value="" placeholder="Old Password">
                 <input type="password" name="passwords[new]" value="" placeholder="New Password">
-                <button type='button' class="btn">Change password!</button>
+                <button type='button' id="change-password" class="btn">Change password!</button>
               </fieldset>
             </form>
           </div>
         </div>
       </div>
-      <div class="container col-md-12 tracker">
-        <h1>Let's Rage.</h1>
-        <div class='container text-center'>
-          <h2>Feelin swole? Track a workout <button type='button' class="btn btn-primary">Track!</button></h2>
+      <div class "container col-md-12" id='contentBody'>
+        <div class="container col-md-12 tracker">
+          <h1>Let's Rage.</h1>
+          <div class='container text-center'>
+            <h2>Feelin swole? Track a workout <button type='button' id='track' class="btn btn-primary">Track!</button></h2>
+          </div>
         </div>
-      </div>
-      <div class='container text-center'>
-        <input type="text" name="push-ups" value="" placeholder="# of 'shups">
-        <input type="text" name="squats" value="" placeholder="# of squats">
-        <input type="text" name="burpees" value="" placeholder="# of burpees">
-        <br>
-        <button type='button' class="btn btn-primary">Save workout!</button>
+        <div class='container text-center' style="display: none;" id='workoutDiv'>
+          <input type="text" name="push-ups" value="" placeholder="# of 'shups">
+          <input type="text" name="squats" value="" placeholder="# of squats">
+          <input type="text" name="burpees" value="" placeholder="# of burpees">
+          <br>
+          <button type='button' class="btn btn-primary">Save workout!</button>
+        </div>
       </div>
     </div>
   </div>

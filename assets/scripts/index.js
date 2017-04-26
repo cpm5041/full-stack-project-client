@@ -3,6 +3,7 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const authEvents = require('./auth/events.js')
+const workoutLogic = require('./workoutLogic.js')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -15,4 +16,5 @@ $(() => {
 require('./example')
 $(() => {
   authEvents.addHandlers()
+  workoutLogic.initializePage()
 })
