@@ -67,6 +67,7 @@ const addHandlers = () => {
   $('#track').on('click', showWorkoutDiv)
   // $('#sign-in').on('click', showContentBody)
   $('#shupsInput').on('submit', addShups)
+  $('#saveWorkout').on('submit', addShups)
 //   $('#create').on('click', onCreate)
 }
 //

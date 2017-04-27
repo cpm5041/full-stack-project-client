@@ -20,11 +20,11 @@
     </div> -->
     <br>
     <!-- Success notifications -->
-  <div class="alert alert-success" role="alert" id="divCheckbox" style="display: none;">&nbsp;</div>
-  <!-- Error notifications -->
-  <div class="alert alert-danger" role="alert" id="divCheckboxFailure" style="display: none;">&nbsp;</div>
+    <div class="alert alert-success" role="alert" id="divCheckbox" style="display: none;">&nbsp;</div>
+    <!-- Error notifications -->
+    <div class="alert alert-danger" role="alert" id="divCheckboxFailure" style="display: none;">&nbsp;</div>
     <div class='container'>
-        <!-- Sign up/in row -->
+      <!-- Sign up/in row -->
       <div class='row well' id='signUpRow'>
         <!-- Sign up -->
         <div class='col-md-6 form-group'>
@@ -35,11 +35,11 @@
               <input type="text" name="credentials[email]" value="" placeholder="email">
               <input type="password" name="credentials[password]" id='pwInput' value="" placeholder="password">
               <input type="password" name="credentials[password_confirmation]" id='pwInputConf' value="" placeholder="password confirmation">
-              <input type='submit'  name='submit' class="credentials btn btn-primary" value='Sign up!'>
+              <input type='submit' name='submit' class="credentials btn btn-primary" value='Sign up!'>
             </fieldset>
           </form>
         </div>
-          <!-- Sign in -->
+        <!-- Sign in -->
         <div class='col-md-6 form-group'>
           <form class="credentials" id="sign-in">
             <i class='glyphicon glyphicon-user'></i>
@@ -47,54 +47,54 @@
               <legend>Sign in!</legend>
               <input type="text" name="credentials[email]" value="" placeholder="email">
               <input type="password" name="credentials[password]" value="" placeholder="password">
-              <input type='submit'  class="btn" value='Sign in!'>
+              <input type='submit' class="btn" value='Sign in!'>
             </fieldset>
           </form>
         </div>
       </div>
-  <!-- Change pw/sign out row -->
+      <!-- Change pw/sign out row -->
       <div class='container row well' id='loggedInRow' style="display: none;">
         <!-- <div class='row well'> -->
-            <!-- Sign out -->
-          <div class='col-md-6 form-group'>
-            <form class="credentials signOut" id="sign-out">
-              <i class='glyphicon glyphicon-log-out'></i>
-              <fieldset>
-                <legend>Sign out!</legend>
-                <input type='submit' class="btn" value='Sign out!'>
-              </fieldset>
-            </form>
-          </div>
-            <!-- Change password -->
-          <div class='col-md-6 form-group'>
-            <form class="credentials pw" id="change-password">
-              <i class='glyphicon glyphicon-wrench'></i>
-              <fieldset>
-                <legend>Change Password</legend>
-                <input type="password" name="passwords[old]" value="" placeholder="Old Password">
-                <input type="password" name="passwords[new]" value="" placeholder="New Password">
-                <input type='submit'  class="btn" value='Change password!'>
-              </fieldset>
-            </form>
-          </div>
+        <!-- Sign out -->
+        <div class='col-md-6 form-group'>
+          <form class="credentials signOut" id="sign-out">
+            <i class='glyphicon glyphicon-log-out'></i>
+            <fieldset>
+              <legend>Sign out!</legend>
+              <input type='submit' class="btn" value='Sign out!'>
+            </fieldset>
+          </form>
+        </div>
+        <!-- Change password -->
+        <div class='col-md-6 form-group'>
+          <form class="credentials pw" id="change-password">
+            <i class='glyphicon glyphicon-wrench'></i>
+            <fieldset>
+              <legend>Change Password</legend>
+              <input type="password" name="passwords[old]" value="" placeholder="Old Password">
+              <input type="password" name="passwords[new]" value="" placeholder="New Password">
+              <input type='submit' class="btn" value='Change password!'>
+            </fieldset>
+          </form>
+        </div>
         <!-- </div> -->
       </div>
-        <!-- End of credentials, beginning of contentBody -->
+      <!-- End of credentials, beginning of contentBody -->
       <div class "container col-md-12" id='contentBody'>
-          <!-- Lets rage, tracker button -->
+        <!-- Lets rage, tracker button -->
         <div class="container col-md-12 tracker">
           <h1>Let's Rage.</h1>
           <div class='container text-center'>
             <h2>Feelin swole? Track a workout <button type='button' id='track' class="btn btn-primary">Track!</button></h2>
           </div>
         </div>
-          <!-- Workout input form -->
-        <div class='container text-center' style="display: none;" id='workoutDiv'>
+        <!-- Workout input form -->
+        <div class='container form-group text-center' style="display: none;" id='workoutDiv'>
           <input id='shupsInput' type="text" name="push-ups" value="" placeholder="# of 'shups">
           <input id='squatsInput' type="text" name="squats" value="" placeholder="# of squats">
           <input id='burpeesInput' type="text" name="burpees" value="" placeholder="# of burpees">
           <br>
-          <button type='button' class="btn btn-primary">Save workout!</button>
+          <input id='saveWorkout' type='submit' class="btn btn-primary" value='Save workout!'>
         </div>
       </div>
     </div>
