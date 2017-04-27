@@ -7,11 +7,13 @@ const signUpSuccess = (data) => {
   $('#divCheckbox').css('display', 'block')
   $('#divCheckbox').text('Sign-up Successful!')
   $('#sign-up').trigger('reset')
+  $('#divCheckboxFailure').css('display', 'none')
 }
 
 const signUpFailure = (error) => {
-  $('#divCheckbox').css('display', 'block')
-  $('#divCheckbox').text('Cmon, dont BS me. Sign-up Failed!')
+  $('#divCheckbox').css('display', 'none')
+  $('#divCheckboxFailure').css('display', 'block')
+  $('#divCheckboxFailure').text('Cmon, dont BS me. Sign-up Failed!')
   console.log('sign up failed')
   console.error(error)
 }
@@ -19,6 +21,7 @@ const signInSuccess = (data) => {
   console.log('sign in success ran. data: ', data)
   $('#divCheckbox').css('display', 'block')
   $('#divCheckbox').text('Sign-in Successful! Lets Rage!')
+  $('#divCheckboxFailure').css('display', 'none')
   $('.signOut').css('display', 'block')
   $('.pw').css('display', 'block')
   $('#contentBody').css('display', 'block')
@@ -31,17 +34,20 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = (error) => {
-  $('#divCheckbox').css('display', 'block')
-  $('#divCheckbox').text('Cmon, dont BS me. Sign-in Failed!')
+  $('#divCheckboxFailure').css('display', 'block')
+  $('#divCheckboxFailure').text('Cmon, dont BS me. Sign-in Failed!')
+  $('#divCheckbox').css('display', 'none')
   console.error('sign in failure ran. data: ', error)
 }
 const signOutSuccess = () => {
   console.log('sign out worked')
   $('#divCheckbox').css('display', 'block')
+  $('#divCheckboxFailure').css('display', 'none')
   $('#divCheckbox').text('Sign-out Successful! CYA!')
   $('.signOut').css('display', 'none')
   $('.pw').css('display', 'none')
   $('#contentBody').hide()
+  $('#workoutDiv').hide()
   $('#loggedInRow').css('display', 'none')
   $('#signUpRow').show()
   $('.sign-up').show()
@@ -51,12 +57,14 @@ const signOutSuccess = () => {
 }
 
 const signOutFailure = (error) => {
-  $('#divCheckbox').css('display', 'block')
-  $('#divCheckbox').text('Cmon, dont BS me. Sign-out Failed!')
+  $('#divCheckboxFailure').css('display', 'block')
+  $('#divCheckboxFailure').text('Cmon, dont BS me. Sign-out Failed!')
+  $('#divCheckbox').css('display', 'none')
   console.error('sign in failure ran. data: ', error)
 }
 const changePasswordSuccess = (data) => {
   $('#sign-in').show()
+  $('#divCheckboxFailure').css('display', 'none')
   $('.pw').trigger('reset')
   $('#divCheckbox').css('display', 'block')
   $('#divCheckbox').text('Password changed!')
@@ -65,8 +73,9 @@ const changePasswordSuccess = (data) => {
 }
 
 const changePasswordFailure = (error) => {
-  $('#divCheckbox').css('display', 'block')
-  $('#divCheckbox').text('Cmon, dont BS me. Failed to change pw!')
+  $('#divCheckboxFailure').css('display', 'block')
+  $('#divCheckboxFailure').text('Cmon, dont BS me. Failed to change pw!')
+  $('#divCheckbox').css('display', 'none')
   console.error('Change password failure ran. data: ', error)
 }
 // const createSuccess = (data) => {

@@ -41,6 +41,8 @@ const showContentBody = function (event) {
 }
 const showWorkoutDiv = function (event) {
   console.log('track')
+  $('#divCheckbox').css('display', 'none')
+  $('#divCheckboxFailure').css('display', 'none')
   $('#workoutDiv').css('display', 'block')
 }
 
