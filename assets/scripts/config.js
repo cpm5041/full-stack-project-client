@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://cpmfullstackproject.herokuapp.com/'
+    production: 'https://cpmfullstackproject.herokuapp.com'
   }
 }
 
