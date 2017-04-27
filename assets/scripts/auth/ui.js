@@ -13,8 +13,12 @@ const signUpFailure = (error) => {
 }
 const signInSuccess = (data) => {
   console.log('sign in success ran. data: ', data)
-  $('.signOut').show()
-  $('.pw').show()
+  $('#divCheckbox').css('display', 'block')
+  $('.signOut').css('display', 'block')
+  $('.pw').css('display', 'block')
+  $('#contentBody').css('display', 'block')
+  $('#loggedInRow').css('display', 'block')
+  $('#signUpRow').hide()
   $('.sign-up').hide()
   $('#sign-in').hide()
   $('#sign-in').trigger('reset')
@@ -25,10 +29,16 @@ const signInFailure = (error) => {
   console.error('sign in failure ran. data: ', error)
 }
 const signOutSuccess = () => {
+  console.log('sign out worked')
+  $('#divCheckbox').css('display', 'none')
+  $('.signOut').css('display', 'none')
+  $('.pw').css('display', 'none')
+  $('#contentBody').hide()
+  $('#loggedInRow').css('display', 'none')
+  $('#signUpRow').show()
+  $('.sign-up').show()
   $('#sign-in').show()
-  $('#sign-up').show()
-  $('.pw').hide()
-  $('#sign-out').hide()
+  $('#sign-in').trigger('reset')
   store.user = null
 }
 

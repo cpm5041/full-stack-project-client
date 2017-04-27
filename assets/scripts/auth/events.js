@@ -15,7 +15,6 @@ const onSignUp = function (event) {
     .catch(ui.signUpFailure)
 }
 const onSignIn = function (event) {
-  console.log('sign in clicked')
   // this here is pointing to event.target from last lesson
   // grabbing all data out of the form, putting it into object
   const data = getFormFields(this)
@@ -25,14 +24,12 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 const onSignOut = function (event) {
-  console.log('sign out clicked')
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }
 const onChangePassword = function (event) {
-  console.log('change pw clicked')
   event.preventDefault()
   const data = getFormFields(this)
   api.changePassword(data)
@@ -40,7 +37,6 @@ const onChangePassword = function (event) {
     .catch(ui.changePasswordFailure)
 }
 const showContentBody = function (event) {
-  console.log('track')
   $('#contentBody').show()
 }
 const showWorkoutDiv = function (event) {
@@ -63,15 +59,16 @@ const addShups = function (event) {
 //
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('click', onSignIn)
-  $('#sign-out').on('click', onSignOut)
+  $('#sign-in').on('submit', onSignIn)
+  $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('#track').on('click', showWorkoutDiv)
-  $('#sign-in').on('click', showContentBody)
+  // $('#sign-in').on('click', showContentBody)
   $('#shupsInput').on('submit', addShups)
 //   $('#create').on('click', onCreate)
 }
 //
 module.exports = {
-  addHandlers
+  addHandlers,
+  showContentBody
 }

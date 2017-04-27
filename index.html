@@ -21,7 +21,7 @@
     <br>
     <div class='container'>
         <!-- Sign up/in row -->
-      <div class='row well'>
+      <div class='row well' id='signUpRow'>
         <!-- Sign up -->
         <div class='col-md-6 form-group'>
           <form class="credentials sign-up" id="sign-up">
@@ -51,15 +51,15 @@
         <!-- Success notification -->
       <div class="alert alert-success" role="alert" id="divCheckbox" style="display: none;">Success!</div>
   <!-- Change pw/sign out row -->
-      <div class='container' style="display: none;">
-        <div class='row well'>
+      <div class='container row well' id='loggedInRow' style="display: none;">
+        <!-- <div class='row well'> -->
             <!-- Sign out -->
           <div class='col-md-6 form-group'>
             <form class="credentials signOut" id="sign-out">
               <i class='glyphicon glyphicon-log-out'></i>
               <fieldset>
                 <legend>Sign out!</legend>
-                <button  type='button' class="btn">Sign out!</button>
+                <input type='submit' class="btn" value='Sign out!'>
               </fieldset>
             </form>
           </div>
@@ -71,11 +71,11 @@
                 <legend>Change Password</legend>
                 <input type="password" name="passwords[old]" value="" placeholder="Old Password">
                 <input type="password" name="passwords[new]" value="" placeholder="New Password">
-                <button type='button'  class="btn">Change password!</button>
+                <input type='submit'  class="btn" value='Change password!'>
               </fieldset>
             </form>
           </div>
-        </div>
+        <!-- </div> -->
       </div>
         <!-- End of credentials, beginning of contentBody -->
       <div class "container col-md-12" id='contentBody'>
