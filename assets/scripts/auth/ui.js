@@ -4,16 +4,21 @@ const store = require('../store')
 
 const signUpSuccess = (data) => {
   console.log('sign up worked!')
+  $('#divCheckbox').css('display', 'block')
+  $('#divCheckbox').text('Sign-up Successful!')
   $('#sign-up').trigger('reset')
 }
 
 const signUpFailure = (error) => {
+  $('#divCheckbox').css('display', 'block')
+  $('#divCheckbox').text('Cmon, dont BS me. Sign-up Failed!')
   console.log('sign up failed')
   console.error(error)
 }
 const signInSuccess = (data) => {
   console.log('sign in success ran. data: ', data)
   $('#divCheckbox').css('display', 'block')
+  $('#divCheckbox').text('Sign-in Successful! Lets Rage!')
   $('.signOut').css('display', 'block')
   $('.pw').css('display', 'block')
   $('#contentBody').css('display', 'block')
@@ -26,11 +31,14 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = (error) => {
+  $('#divCheckbox').css('display', 'block')
+  $('#divCheckbox').text('Cmon, dont BS me. Sign-in Failed!')
   console.error('sign in failure ran. data: ', error)
 }
 const signOutSuccess = () => {
   console.log('sign out worked')
-  $('#divCheckbox').css('display', 'none')
+  $('#divCheckbox').css('display', 'block')
+  $('#divCheckbox').text('Sign-out Successful! CYA!')
   $('.signOut').css('display', 'none')
   $('.pw').css('display', 'none')
   $('#contentBody').hide()
@@ -43,18 +51,22 @@ const signOutSuccess = () => {
 }
 
 const signOutFailure = (error) => {
-  $('.userNotification').text('Signed out failed!')
+  $('#divCheckbox').css('display', 'block')
+  $('#divCheckbox').text('Cmon, dont BS me. Sign-out Failed!')
   console.error('sign in failure ran. data: ', error)
 }
 const changePasswordSuccess = (data) => {
   $('#sign-in').show()
   $('.pw').trigger('reset')
+  $('#divCheckbox').css('display', 'block')
+  $('#divCheckbox').text('Password changed!')
   // console.log('Change password worked!')
   // store whatver you get back from the request so you can use it later
 }
 
 const changePasswordFailure = (error) => {
-  $('.userNotification').text('Password Change failed, try again!')
+  $('#divCheckbox').css('display', 'block')
+  $('#divCheckbox').text('Cmon, dont BS me. Failed to change pw!')
   console.error('Change password failure ran. data: ', error)
 }
 // const createSuccess = (data) => {
