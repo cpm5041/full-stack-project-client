@@ -9,7 +9,6 @@ const onSignUp = function (event) {
   // this here is pointing to event.target from last lesson
   // grabbing all data out of the form, putting it into object
   const data = getFormFields(event.target)
-  console.log('sign up clicked')
   event.preventDefault()
   api.signUp(data)
     .then(ui.signUpSuccess)
@@ -48,6 +47,12 @@ const showWorkoutDiv = function (event) {
   console.log('track')
   $('#workoutDiv').css('display', 'block')
 }
+
+const addShups = function (event) {
+  event.preventDefault()
+
+  console.log('someones doin some shups')
+}
 // // const onCreate = function (event) {
 // //   event.preventDefault()
 // //   const data = getFormFields(event.target)
@@ -57,12 +62,13 @@ const showWorkoutDiv = function (event) {
 // // }
 //
 const addHandlers = () => {
-  $('#sign-up').on('click', onSignUp)
+  $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('click', onSignIn)
   $('#sign-out').on('click', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('#track').on('click', showWorkoutDiv)
   $('#sign-in').on('click', showContentBody)
+  $('#shupsInput').on('submit', addShups)
 //   $('#create').on('click', onCreate)
 }
 //
