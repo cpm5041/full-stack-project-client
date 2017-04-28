@@ -84,26 +84,32 @@
         <!-- Lets rage, tracker button -->
         <div class="container-fluid">
           <button id="getWorkoutsButton" class="btn btn-default">Get Workouts!</button>
-          <button id="clearWorkoutsButton" class="btn btn-default">Clear Workouts!</button>
+          <button id="clearWorkoutsButton" class="btn btn-default">Hide Workouts!</button>
         </div>
-          <div class="container col-md-12 tracker">
-            <h1>Let's Rage.</h1>
-            <div class='container text-center'>
-              <h2>Feelin swole? Track a workout <button type='button' id='track' class="btn btn-primary">Track!</button></h2>
-            </div>
+        <div class="container col-md-12 tracker">
+          <h1>Let's Rage.</h1>
+          <div class='container text-center'>
+            <h2>Feelin swole? Track a workout <button type='button' id='track' class="btn btn-primary">Track!</button></h2>
           </div>
-          <!-- Workout input form -->
-          <div class='container form-group text-center' style="display: none;" id='workoutDiv'>
-            <input id='shupsInput' type="text" name="push-ups" value="" placeholder="# of 'shups">
-            <input id='squatsInput' type="text" name="squats" value="" placeholder="# of squats">
-            <input id='burpeesInput' type="text" name="burpees" value="" placeholder="# of burpees">
-            <br>
-            <input id='saveWorkout' type='submit' class="btn btn-primary" value='Save workout!'>
-            <div id="content" class="content"></div>
-            </div>
-          </div>
+        </div>
+        <!-- Workout input form -->
+        <div class='container form-group text-center' style="display: none;" id='workoutDiv'>
+          <form id='workoutForm'>
+          <input id='shupsInput' type="text" name="workout[shups]" value="" placeholder="# of 'shups">
+          <input id='squatsInput' type="text" name="workout[squats]" value="" placeholder="# of squats">
+          <input id='burpeesInput' type="text" name="workout[burpees]" value="" placeholder="# of burpees">
+          <br>
+          <input id='saveWorkout' type='submit' class="btn btn-primary" value='Save workout!'>
+        </form>
+        </div>
+        <!-- Get workout form -->
+        <div style="display: none;" class='col-lg-4 col-md-4  col-offset-4 showWorkoutForm container well center-block text-center'>
+          <div id="content" class="workoutInfo text-center"></div>
         </div>
       </div>
+    </div>
+  </div>
+
 </body>
 
 </html>

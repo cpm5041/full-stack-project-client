@@ -14,27 +14,30 @@ const showWorkoutsTemplate = require('../templates/workout-listing.handlebars')
 //   $('.content').append(showBooksHtml);
 //   $('.btn').on('click', hideButton)
 // };
-const hideWorkout = function () {
-  if (confirm('Are you sure you want to hide this?')) {
-    const id = $(this).attr('data-id')
-    console.log('i clicked', id)
-    $('.workout' + id).hide()
-  } else {
-    alert('ok sucker!')
-  }
-}
+// const hideWorkout = function () {
+//   if (confirm('Are you sure you want to hide this?')) {
+//     const id = $(this).attr('data-id')
+//     console.log('i clicked', id)
+//     $('.workout' + id).hide()
+//   } else {
+//     alert('ok sucker!')
+//   }
+// }
 const getWorkoutsSuccess = (data) => {
   console.log(data)
   const showWorkoutsHtml = showWorkoutsTemplate({
     workouts: data.workouts
   })
-  $('.content').html(showWorkoutsHtml)
-  $('.btn').on('click', hideWorkout)
+  $('.workoutInfo').html(showWorkoutsHtml)
+  $('.showWorkoutForm').css('display', 'block')
+  // $('.btn').on('click', hideWorkout)
 }
 const clearWorkouts = () => {
-  $('.content').empty()
+  $('.showWorkoutForm').css('display', 'none')
 }
-
+const createWorkoutsSuccess = (data) => {
+  console.log('create success', data)
+}
 const failure = (error) => {
   console.error(error)
 }
@@ -42,5 +45,6 @@ const failure = (error) => {
 module.exports = {
   getWorkoutsSuccess,
   clearWorkouts,
+  createWorkoutsSuccess,
   failure
 }

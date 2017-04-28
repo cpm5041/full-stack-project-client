@@ -1,20 +1,15 @@
 <ul>
   {{#each workouts as |workout|}}
 
-    <li class='workout{{workout.id}}'>
-      <h1>  <small>Title: {{workout.title}}</small></h1>
+    <li class='workout{{workout.id}} list-unstyled'>
+      <h1>  <small>Workout stats: {{workout.title}}</small></h1>
       <div>
-        <!-- {{#if workout.description}}
-      {{workout.description}}
-    {{else}}
-      No description.
-    {{/if}} -->
 
-        <ul class="workouts">
-          <li>{{workout.shups}}</li>
-          <li>{{workout.squats}}</li>
-          <li>{{workout.burpees}}</li>
-
+        <ul class="workouts list-unstyled">
+          <li>Push-ups: {{workout.shups}}</li>
+          <li>Squats: {{workout.squats}}</li>
+          <li>Burpees: {{workout.burpees}}</li>
+          <li><button type="button" name="button">F that workout!</button></li>
         </ul>
       </div>
       <hr>

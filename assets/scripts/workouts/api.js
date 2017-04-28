@@ -12,7 +12,27 @@ const getWorkouts = function () {
     }
   })
 }
-
+const createWorkouts = function (data) {
+  return $.ajax({
+    // config.apiOrigins
+    url: app.host + '/workouts', // "http://book-json.herokuapp.com/books"
+    method: 'POST',
+    data: data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+// const getWorkout = function () {
+//   return $.ajax({
+//     url: app.host + '/workouts', // "http://book-json.herokuapp.com/books"
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
 module.exports = {
-  getWorkouts
+  getWorkouts,
+  createWorkouts
 }
