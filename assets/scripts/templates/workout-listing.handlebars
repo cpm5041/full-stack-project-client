@@ -5,11 +5,12 @@
       <h1>  <small>Workout stats: {{workout.title}}</small></h1>
       <div>
 
-        <ul class="workouts list-unstyled">
+        <ul class="workouts workoutStats list-unstyled">
           <li>Push-ups: {{workout.shups}}</li>
           <li>Squats: {{workout.squats}}</li>
           <li>Burpees: {{workout.burpees}}</li>
-          <li><button type="button" name="button">F that workout!</button></li>
+          <li><button class='btn btn-danger apiButton deleteButton' type="button" name="delete_button">F that workout!</button></li>
+          <li><button class='btn btn-warning apiButton' type="button" name="update_button">I did more reps than that!</button></li>
         </ul>
       </div>
       <hr>

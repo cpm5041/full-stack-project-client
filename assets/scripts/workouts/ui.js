@@ -36,6 +36,7 @@ const clearWorkouts = () => {
   $('.showWorkoutForm').css('display', 'none')
 }
 const createWorkoutsSuccess = (data) => {
+  $('#workoutForm').trigger('reset')
   console.log('create success', data)
 }
 const failure = (error) => {
