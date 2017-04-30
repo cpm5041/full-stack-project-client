@@ -9,7 +9,6 @@ const initializePage = function () {
   $('.pw').hide()
   $('#contentBody').hide()
 }
-
 module.exports = {
   initializePage
 }

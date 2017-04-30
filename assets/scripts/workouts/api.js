@@ -33,6 +33,17 @@ const deleteWorkout = function (id) {
     }
   })
 }
+const updateWorkout = function (id, name) {
+  return $.ajax({
+    // config.apiOrigins
+    url: app.host + '/workouts/' + id,
+    data: {workout: {name: name}},
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 // const getWorkout = function () {
 //   return $.ajax({
 //     url: app.host + '/workouts', // "http://book-json.herokuapp.com/books"
@@ -45,5 +56,6 @@ const deleteWorkout = function (id) {
 module.exports = {
   getWorkouts,
   createWorkouts,
-  deleteWorkout
+  deleteWorkout,
+  updateWorkout
 }

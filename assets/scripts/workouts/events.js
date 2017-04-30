@@ -17,8 +17,6 @@ const onClearWorkouts = (event) => {
 }
 const onCreateWorkouts = function (event) {
   event.preventDefault()
-  console.log('in create workout')
-  console.log(this)
   const data = getFormFields(this)
   api.createWorkouts(data)
     .then(ui.createWorkoutsSuccess)
@@ -27,12 +25,20 @@ const onCreateWorkouts = function (event) {
 const onDeleteSingleWorkout = function (event) {
   event.preventDefault()
   const id = $(this).attr('data-id')
-  console.log("i clicked", id)
+  console.log('i clicked', id)
   $(this).closest('li').hide()
   api.deleteWorkout(id)
   .then(ui.deleteWorkoutsSuccess)
   .catch(ui.failure)
   // $(this).closest('.li').hide()
+}
+const onUpdateSingleWorkout = function (event) {
+  event.preventDefault()
+  const id = $(this).attr('data-id')
+  console.log('updating: ', id)
+  api.updateWorkout(id)
+  .then(ui.updateWorkoutsSuccess)
+  .catch(ui.failure)
 }
 
 const addHandlers = () => {
@@ -40,6 +46,7 @@ const addHandlers = () => {
   $('#workoutForm').on('submit', onCreateWorkouts)
   $('#clearWorkoutsButton').on('click', onClearWorkouts)
   $('.showWorkoutForm').on('click', '.deleteButton', onDeleteSingleWorkout)
+  $('.showWorkoutForm').on('click', '.updateButton', onUpdateSingleWorkout)
 }
 
 module.exports = {

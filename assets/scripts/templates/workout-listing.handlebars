@@ -1,14 +1,14 @@
 <ul>
   {{#each workouts as |workout|}}
-    <li data-id:"{{this.id}}" data-name="{{this.name}}" class='this{{this.id}} list-unstyled'>
+    <li data-id: "{{this.id}}" data-name="{{this.name}}" class='this{{this.id}} col-md-4 list-unstyled'>
       <h1>  <small>Workout stats: {{workout.title}}</small></h1>
       <div>
         <ul class="workouts workoutStats list-unstyled">
           <p>Push-ups: {{workout.shups}}</p>
           <p>Squats: {{workout.squats}}</p>
           <p>Burpees: {{workout.burpees}}</p>
-          <p><button id='clearBooksButton' data-id="{{workout.id}}" class='btn btn-danger apiButton deleteButton' type="button" name="delete_button">F that workout!</button></p>
-          <p><button data-id="{{workout.id}}" class='btn btn-warning apiButton' type="button" name="update_button">I did more reps than that!</button></p>
+          <p><button data-id="{{workout.id}}" class='btn btn-danger text-center apiButton deleteButton' type="button" name="delete_button">F that workout!</button></p>
+          <p><button data-id="{{workout.id}}" class='btn btn-warning text-center apiButton updateButton' type="button" name="update_button">I did more reps than that!</button></p>
         </ul>
       </div>
       <hr>

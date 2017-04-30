@@ -28,8 +28,6 @@ const getWorkoutsSuccess = (data) => {
     workouts: data.workouts
   })
   $('.workoutInfo').html(showWorkoutsHtml)
-  // $('.btn').on('click', events.onClearSingleWorkout)
-  // console.log('clear single workout')
   $('.showWorkoutForm').css('display', 'block')
 }
 const clearWorkouts = () => {
@@ -41,8 +39,9 @@ const createWorkoutsSuccess = (data) => {
 }
 const deleteWorkoutsSuccess = (data) => {
   console.log('clearing single workout')
-  // $('.showWorkoutForm').find('li[data-id=' + data.id + ']').hide()
-  // $(this).hide()
+}
+const updateWorkoutsSuccess = (data) => {
+  console.log('updating single workout success')
 }
 const failure = (error) => {
   console.error(error)
@@ -53,5 +52,6 @@ module.exports = {
   clearWorkouts,
   createWorkoutsSuccess,
   failure,
-  deleteWorkoutsSuccess
+  deleteWorkoutsSuccess,
+  updateWorkoutsSuccess
 }

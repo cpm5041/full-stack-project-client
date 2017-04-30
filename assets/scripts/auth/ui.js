@@ -53,6 +53,8 @@ const signOutSuccess = () => {
   $('.sign-up').show()
   $('#sign-in').show()
   $('#sign-in').trigger('reset')
+  $('.showWorkoutForm').css('display', 'none')
+  $('.showWorkoutForm').trigger('reset')
   store.user = null
 }
 
