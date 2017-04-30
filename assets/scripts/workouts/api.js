@@ -23,6 +23,16 @@ const createWorkouts = function (data) {
     }
   })
 }
+const deleteWorkout = function (id) {
+  return $.ajax({
+    // config.apiOrigins
+    url: app.host + '/workouts/' + id, // "http://book-json.herokuapp.com/books"
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 // const getWorkout = function () {
 //   return $.ajax({
 //     url: app.host + '/workouts', // "http://book-json.herokuapp.com/books"
@@ -34,5 +44,6 @@ const createWorkouts = function (data) {
 // }
 module.exports = {
   getWorkouts,
-  createWorkouts
+  createWorkouts,
+  deleteWorkout
 }

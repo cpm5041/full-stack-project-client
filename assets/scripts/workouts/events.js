@@ -24,10 +24,22 @@ const onCreateWorkouts = function (event) {
     .then(ui.createWorkoutsSuccess)
     .catch(ui.failure)
 }
+const onDeleteSingleWorkout = function (event) {
+  event.preventDefault()
+  const id = $(this).attr('data-id')
+  console.log("i clicked", id)
+  $(this).closest('li').hide()
+  api.deleteWorkout(id)
+  .then(ui.deleteWorkoutsSuccess)
+  .catch(ui.failure)
+  // $(this).closest('.li').hide()
+}
+
 const addHandlers = () => {
   $('#getWorkoutsButton').on('click', onGetWorkouts)
   $('#workoutForm').on('submit', onCreateWorkouts)
   $('#clearWorkoutsButton').on('click', onClearWorkouts)
+  $('.showWorkoutForm').on('click', '.deleteButton', onDeleteSingleWorkout)
 }
 
 module.exports = {

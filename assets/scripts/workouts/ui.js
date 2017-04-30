@@ -1,7 +1,7 @@
 'use strict'
 
 const showWorkoutsTemplate = require('../templates/workout-listing.handlebars')
-
+// const events = require('../app.js')
 // const hideButton = () => {
 //   const id = $(this).attr("data-id")
 //   console.log('i got clicked')
@@ -24,13 +24,13 @@ const showWorkoutsTemplate = require('../templates/workout-listing.handlebars')
 //   }
 // }
 const getWorkoutsSuccess = (data) => {
-  console.log(data)
   const showWorkoutsHtml = showWorkoutsTemplate({
     workouts: data.workouts
   })
   $('.workoutInfo').html(showWorkoutsHtml)
+  // $('.btn').on('click', events.onClearSingleWorkout)
+  // console.log('clear single workout')
   $('.showWorkoutForm').css('display', 'block')
-  // $('.btn').on('click', hideWorkout)
 }
 const clearWorkouts = () => {
   $('.showWorkoutForm').css('display', 'none')
@@ -38,6 +38,11 @@ const clearWorkouts = () => {
 const createWorkoutsSuccess = (data) => {
   $('#workoutForm').trigger('reset')
   console.log('create success', data)
+}
+const deleteWorkoutsSuccess = (data) => {
+  console.log('clearing single workout')
+  // $('.showWorkoutForm').find('li[data-id=' + data.id + ']').hide()
+  // $(this).hide()
 }
 const failure = (error) => {
   console.error(error)
@@ -47,5 +52,6 @@ module.exports = {
   getWorkoutsSuccess,
   clearWorkouts,
   createWorkoutsSuccess,
-  failure
+  failure,
+  deleteWorkoutsSuccess
 }

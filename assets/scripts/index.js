@@ -20,5 +20,5 @@ $(() => {
   workoutEvents.addHandlers()
   workoutLogic.initializePage()
   // cahnge board actions to where i define the method
-  // $(document).on('click', '.deleteButon', boardActions.onGetBoard)
+  // $(document).on('click', '.deleteButton', workoutEvents.onClearSingleWorkout)
 })
