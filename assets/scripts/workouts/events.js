@@ -32,21 +32,30 @@ const onDeleteSingleWorkout = function (event) {
   .catch(ui.failure)
   // $(this).closest('.li').hide()
 }
-const onUpdateSingleWorkout = function (event) {
+const onToggleUpdate = function (event) {
   event.preventDefault()
+  console.log('Toggling update div ')
+  const id = $(this).attr('data-id')
+  $('#updateForm' + id).slideToggle()
+  // $('#updateSuccess' + id).slideToggle()
+}
+const onSubmitUpdate = function (event) {
+  event.preventDefault()
+  const data = getFormFields('#updateInput' + id)
   const id = $(this).attr('data-id')
   console.log('updating: ', id)
-  api.updateWorkout(id)
+  $(this).closest('div').slideToggle()
+  api.updateWorkout(id, data)
   .then(ui.updateWorkoutsSuccess)
   .catch(ui.failure)
 }
-
 const addHandlers = () => {
   $('#getWorkoutsButton').on('click', onGetWorkouts)
   $('#workoutForm').on('submit', onCreateWorkouts)
   $('#clearWorkoutsButton').on('click', onClearWorkouts)
   $('.showWorkoutForm').on('click', '.deleteButton', onDeleteSingleWorkout)
-  $('.showWorkoutForm').on('click', '.updateButton', onUpdateSingleWorkout)
+  $('.showWorkoutForm').on('click', '.updateButton', onToggleUpdate)
+  $('.showWorkoutForm').on('click', '.saveUpdate', onSubmitUpdate)
 }
 
 module.exports = {

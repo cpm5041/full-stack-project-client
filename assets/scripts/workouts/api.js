@@ -33,11 +33,11 @@ const deleteWorkout = function (id) {
     }
   })
 }
-const updateWorkout = function (id, name) {
+const updateWorkout = function (id, data) {
   return $.ajax({
     // config.apiOrigins
     url: app.host + '/workouts/' + id,
-    data: {workout: {name: name}},
+    data: data,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token

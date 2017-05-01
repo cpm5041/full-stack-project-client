@@ -1,14 +1,29 @@
 <ul>
   {{#each workouts as |workout|}}
-    <li data-id: "{{this.id}}" data-name="{{this.name}}" class='this{{this.id}} col-md-4 list-unstyled'>
+    <li data-id: "{{this.id}}" data-name="{{this.name}}" class='this{{this.id}} col-md-4 list-unstyled text-center'>
       <h1>  <small>Workout stats: {{workout.title}}</small></h1>
       <div>
         <ul class="workouts workoutStats list-unstyled">
-          <p>Push-ups: {{workout.shups}}</p>
-          <p>Squats: {{workout.squats}}</p>
-          <p>Burpees: {{workout.burpees}}</p>
-          <p><button data-id="{{workout.id}}" class='btn btn-danger text-center apiButton deleteButton' type="button" name="delete_button">F that workout!</button></p>
-          <p><button data-id="{{workout.id}}" class='btn btn-warning text-center apiButton updateButton' type="button" name="update_button">I did more reps than that!</button></p>
+          <!-- Default Workout input form -->
+          <div>
+            <p>Push-ups: {{workout.shups}}</p>
+            <p>Squats: {{workout.squats}}</p>
+            <p>Burpees: {{workout.burpees}}</p>
+            <p><button data-id="{{workout.id}}" class='btn btn-danger text-center apiButton deleteButton' type="button" name="delete_button">F that workout!</button></p>
+            <p><button data-id="{{workout.id}}" class='btn btn-warning text-center apiButton updateButton' type="button" name="update_button">Update Reps!</button></p>
+          </div>
+          <!-- Uodate Workout input form -->
+          <div data-id="{{workout.id}}" id="updateForm{{workout.id}}"class='form-group updateDiv text-center'style='display: none'>
+            <form id="updateInput{{workout.id}}" class='text-center form-group'>
+              <p><input id='updateShupsInput' type="text" name="workout[shups]" value="{{workout.shups}}" placeholder="# of 'shups" required></p>
+              <p><input id='updateSquatsInput' type="text" name="workout[squats]" value="{{workout.squats}}" placeholder="# of squats"></p>
+              <p><input id='updateBurpeesInput' type="text" name="workout[burpees]" value="{{workout.burpees}}" placeholder="# of burpees"></p>
+              <br>
+              <p><input id="updateWorkout{{workout.id}}" data-id="{{workout.id}}" type='submit' class="btn btn-primary text-center saveUpdate" value='Update workout!'></p>
+            </form>
+            <div class="alert alert-success" role="alert" id="updateSuccess{{workout.id}}" style="display: none;">Success!</div>
+              <br>
+          </div>
         </ul>
       </div>
       <hr>

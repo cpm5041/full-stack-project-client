@@ -42,6 +42,7 @@ const deleteWorkoutsSuccess = (data) => {
 }
 const updateWorkoutsSuccess = (data) => {
   console.log('updating single workout success')
+  // $('#updateSuccess' + id).slideToggle()
 }
 const failure = (error) => {
   console.error(error)
