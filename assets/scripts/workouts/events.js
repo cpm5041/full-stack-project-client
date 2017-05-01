@@ -29,20 +29,18 @@ const onDeleteSingleWorkout = function (event) {
   api.deleteWorkout(id)
   .then(ui.deleteWorkoutsSuccess)
   .catch(ui.failure)
-  // $(this).closest('.li').hide()
 }
 const onToggleUpdate = function (event) {
   event.preventDefault()
   const id = $(this).attr('data-id')
   $('#updateForm' + id).slideToggle()
-  // $('#updateSuccess' + id).slideToggle()
 }
 const onSubmitUpdate = function (event) {
   event.preventDefault()
   const id = $(this).attr('id')
   const data = getFormFields(this)
   $(this).closest('div').slideToggle()
-  $('#updateSuccess' + id).slideToggle()
+  $('#updateSuccess' + id).css('display', 'block')
   api.updateWorkout(id, data)
   .then(ui.updateWorkoutsSuccess)
   .catch(ui.failure)

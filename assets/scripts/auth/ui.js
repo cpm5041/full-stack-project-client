@@ -14,6 +14,7 @@ const signUpFailure = (error) => {
   $('#divCheckbox').css('display', 'none')
   $('#divCheckboxFailure').css('display', 'block')
   $('#divCheckboxFailure').text('Cmon, dont BS me. Sign-up Failed!')
+  $('#sign-up').trigger('reset')
   console.log('sign up failed')
   console.error(error)
 }
@@ -55,6 +56,7 @@ const signOutSuccess = () => {
   $('#sign-in').trigger('reset')
   $('.showWorkoutForm').css('display', 'none')
   $('.showWorkoutForm').trigger('reset')
+  $('#bicep').css('display', 'none')
   store.user = null
 }
 
