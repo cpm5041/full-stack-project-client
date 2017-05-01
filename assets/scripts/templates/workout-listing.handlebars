@@ -14,12 +14,12 @@
           </div>
           <!-- Uodate Workout input form -->
           <div data-id="{{workout.id}}" id="updateForm{{workout.id}}"class='form-group updateDiv text-center'style='display: none'>
-            <form id="updateInput{{workout.id}}" class='text-center form-group'>
+            <form id="{{workout.id}}" class='text-center form-group updateForm'>
               <p><input id='updateShupsInput' type="text" name="workout[shups]" value="{{workout.shups}}" placeholder="# of 'shups" required></p>
               <p><input id='updateSquatsInput' type="text" name="workout[squats]" value="{{workout.squats}}" placeholder="# of squats"></p>
               <p><input id='updateBurpeesInput' type="text" name="workout[burpees]" value="{{workout.burpees}}" placeholder="# of burpees"></p>
               <br>
-              <p><input id="updateWorkout{{workout.id}}" data-id="{{workout.id}}" type='submit' class="btn btn-primary text-center saveUpdate" value='Update workout!'></p>
+              <p><input id="{{workout.id}}" data-id="{{workout.id}}" type='submit' class="btn btn-primary text-center saveUpdate" value='Update workout!'></p>
             </form>
             <div class="alert alert-success" role="alert" id="updateSuccess{{workout.id}}" style="display: none;">Success!</div>
               <br>

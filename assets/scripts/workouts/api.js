@@ -37,11 +37,11 @@ const updateWorkout = function (id, data) {
   return $.ajax({
     // config.apiOrigins
     url: app.host + '/workouts/' + id,
-    data: data,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data
   })
 }
 // const getWorkout = function () {

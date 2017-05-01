@@ -41,9 +41,11 @@ const onToggleUpdate = function (event) {
 }
 const onSubmitUpdate = function (event) {
   event.preventDefault()
-  const data = getFormFields('#updateInput' + id)
-  const id = $(this).attr('data-id')
+  const id = $(this).attr('id')
+  const data = getFormFields(this)
+  console.log(data)
   console.log('updating: ', id)
+  console.log(this)
   $(this).closest('div').slideToggle()
   api.updateWorkout(id, data)
   .then(ui.updateWorkoutsSuccess)
@@ -55,7 +57,8 @@ const addHandlers = () => {
   $('#clearWorkoutsButton').on('click', onClearWorkouts)
   $('.showWorkoutForm').on('click', '.deleteButton', onDeleteSingleWorkout)
   $('.showWorkoutForm').on('click', '.updateButton', onToggleUpdate)
-  $('.showWorkoutForm').on('click', '.saveUpdate', onSubmitUpdate)
+  $('.showWorkoutForm').on('submit', '.updateForm', onSubmitUpdate)
+  // $('#updateInput').on('submit', onSubmitUpdate)
 }
 
 module.exports = {
