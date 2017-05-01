@@ -79,7 +79,28 @@
         </div>
         <!-- </div> -->
       </div>
-      <!-- End of credentials, beginning of contentBody -->
+      <!-- End of credentials -->
+      <button id="helpButton" class="btn btn-default helpButton"  data-toggle="tooltip" title="First timer? Check out some tips!">WTF is a burpee?!</button>
+
+      <!-- Help video div -->
+      <div id='videos' class='container' style="display: none; margin:0 auto;">
+        <!-- Pushup video div 16:9 aspect ratio -->
+        <div id='shupVid' class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Eh00_rniF8E"></iframe>
+        </div>
+        <br>
+        <!-- Squat video div 16:9 aspect ratio -->
+        <div id='squatVid' class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/C_VtOYc6j5c"></iframe>
+        </div>
+        <br>
+        <!-- Burpee video div 16:9 aspect ratio -->
+        <div id='burpeeVid' class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/B3pfaQ2sDPA"></iframe>
+        </div>
+      </div>
+      <br>
+      <!--  beginning of contentBody -->
       <div class "container col-md-12" id='contentBody'>
         <!-- Lets rage, tracker button -->
         <div class="container-fluid">
@@ -89,7 +110,10 @@
         <!-- bicep gif -->
         <br>
         <div class='container col-md-12'>
-          <iframe id='bicep' style="display: none; margin:0 auto;" src="//giphy.com/embed/l44Qzitb3pPAlzZ8A" width="480" height="263" frameBorder="0"  allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ben-l-arnold-predator-l44Qzitb3pPAlzZ8A"></a></p>
+          <iframe id='bicep' style="display: none; margin:0 auto;" src="//giphy.com/embed/l44Qzitb3pPAlzZ8A" width="480" height="263" frameBorder="0" allowFullScreen></iframe>
+          <p>
+            <a href="https://giphy.com/gifs/ben-l-arnold-predator-l44Qzitb3pPAlzZ8A"></a>
+          </p>
           <!-- <img src='../assets/images/arnoldbicep.gif' id='bicep' style="display: none; margin:0 auto;" alt="Loading" title="Loading" /> -->
         </div>
         <!-- Workout Content body -->
@@ -103,9 +127,9 @@
           <!-- Workout input form -->
           <div class='container form-group text-center' style="display: none;" id='workoutDiv'>
             <form id='workoutForm'>
-              <input id='shupsInput' type="text" name="workout[shups]" value="" placeholder="# of 'shups" required>
-              <input id='squatsInput' type="text" name="workout[squats]" value="" placeholder="# of squats" required>
-              <input id='burpeesInput' type="text" name="workout[burpees]" value="" placeholder="# of burpees" required>
+              <input id='shupsInput' type="text" name="workout[shups]" value="" placeholder="# of 'shups" data-toggle="tooltip" title="For tips click the WTF is a burpee button!" required>
+              <input id='squatsInput' type="text" name="workout[squats]" value="" placeholder="# of squats" data-toggle="tooltip" title="For tips click the WTF is a burpee button!"required>
+              <input id='burpeesInput' type="text" name="workout[burpees]" value="" placeholder="# of burpees" data-toggle="tooltip" title="For tips click the WTF is a burpee button!" required>
               <br>
               <input id='saveWorkout' type='submit' class="btn btn-primary" value='Save workout!'>
             </form>

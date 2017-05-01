@@ -45,6 +45,10 @@ const onSubmitUpdate = function (event) {
   .then(ui.updateWorkoutsSuccess)
   .catch(ui.failure)
 }
+const onHelpVideos = function (event) {
+  event.preventDefault()
+  $('#videos').slideToggle()
+}
 const addHandlers = () => {
   $('#getWorkoutsButton').on('click', onGetWorkouts)
   $('#workoutForm').on('submit', onCreateWorkouts)
@@ -52,6 +56,8 @@ const addHandlers = () => {
   $('.showWorkoutForm').on('click', '.deleteButton', onDeleteSingleWorkout)
   $('.showWorkoutForm').on('click', '.updateButton', onToggleUpdate)
   $('.showWorkoutForm').on('submit', '.updateForm', onSubmitUpdate)
+  $('#helpButton').on('click', onHelpVideos)
+  $('[data-toggle="tooltip"]').tooltip()
   // $('#updateInput').on('submit', onSubmitUpdate)
 }
 
