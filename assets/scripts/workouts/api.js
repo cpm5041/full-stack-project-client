@@ -1,11 +1,12 @@
 'use strict'
 // TODO: change the url to the database
-const app = require('../app.js')
+// const app = require('../app.js')
+const config = require('../config.js')
 const store = require('../store')
 
 const getWorkouts = function () {
   return $.ajax({
-    url: app.host + '/workouts', // "http://book-json.herokuapp.com/books"
+    url: config.apiOrigin + '/workouts', // "http://book-json.herokuconfig.com/books"
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -15,7 +16,7 @@ const getWorkouts = function () {
 const createWorkouts = function (data) {
   return $.ajax({
     // config.apiOrigins
-    url: app.host + '/workouts', // "http://book-json.herokuapp.com/books"
+    url: config.apiOrigin + '/workouts', // "http://book-json.herokuconfig.com/books"
     method: 'POST',
     data: data,
     headers: {
@@ -26,7 +27,7 @@ const createWorkouts = function (data) {
 const deleteWorkout = function (id) {
   return $.ajax({
     // config.apiOrigins
-    url: app.host + '/workouts/' + id, // "http://book-json.herokuapp.com/books"
+    url: config.apiOrigin + '/workouts/' + id, // "http://book-json.herokuconfig.com/books"
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -36,7 +37,7 @@ const deleteWorkout = function (id) {
 const updateWorkout = function (id, data) {
   return $.ajax({
     // config.apiOrigins
-    url: app.host + '/workouts/' + id,
+    url: config.apiOrigin + '/workouts/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -46,7 +47,7 @@ const updateWorkout = function (id, data) {
 }
 // const getWorkout = function () {
 //   return $.ajax({
-//     url: app.host + '/workouts', // "http://book-json.herokuapp.com/books"
+//     url: config.apiOrigins + '/workouts', // "http://book-json.herokuconfig.com/books"
 //     method: 'GET',
 //     headers: {
 //       Authorization: 'Token token=' + store.user.token

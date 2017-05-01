@@ -1,6 +1,7 @@
 'use strict'
 
 const showWorkoutsTemplate = require('../templates/workout-listing.handlebars')
+
 // const events = require('../app.js')
 // const hideButton = () => {
 //   const id = $(this).attr("data-id")
@@ -42,7 +43,6 @@ const deleteWorkoutsSuccess = (data) => {
 }
 const updateWorkoutsSuccess = (data) => {
   console.log('updating single workout success')
-  // $('#updateSuccess' + id).slideToggle()
 }
 const failure = (error) => {
   console.error(error)

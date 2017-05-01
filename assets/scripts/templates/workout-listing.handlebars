@@ -12,16 +12,16 @@
             <p><button data-id="{{workout.id}}" class='btn btn-danger text-center apiButton deleteButton' type="button" name="delete_button">F that workout!</button></p>
             <p><button data-id="{{workout.id}}" class='btn btn-warning text-center apiButton updateButton' type="button" name="update_button">Update Reps!</button></p>
           </div>
-          <!-- Uodate Workout input form -->
+          <div class="alert alert-success" role="alert" id="updateSuccess{{workout.id}}" style="display: none;">Success!</div>
+          <!-- Update Workout input form -->
           <div data-id="{{workout.id}}" id="updateForm{{workout.id}}"class='form-group updateDiv text-center'style='display: none'>
             <form id="{{workout.id}}" class='text-center form-group updateForm'>
               <p><input id='updateShupsInput' type="text" name="workout[shups]" value="{{workout.shups}}" placeholder="# of 'shups" required></p>
-              <p><input id='updateSquatsInput' type="text" name="workout[squats]" value="{{workout.squats}}" placeholder="# of squats"></p>
-              <p><input id='updateBurpeesInput' type="text" name="workout[burpees]" value="{{workout.burpees}}" placeholder="# of burpees"></p>
+              <p><input id='updateSquatsInput' type="text" name="workout[squats]" value="{{workout.squats}}" placeholder="# of squats" required></p>
+              <p><input id='updateBurpeesInput' type="text" name="workout[burpees]" value="{{workout.burpees}}" placeholder="# of burpees" required></p>
               <br>
               <p><input id="{{workout.id}}" data-id="{{workout.id}}" type='submit' class="btn btn-primary text-center saveUpdate" value='Update workout!'></p>
             </form>
-            <div class="alert alert-success" role="alert" id="updateSuccess{{workout.id}}" style="display: none;">Success!</div>
               <br>
           </div>
         </ul>

@@ -25,7 +25,6 @@ const onCreateWorkouts = function (event) {
 const onDeleteSingleWorkout = function (event) {
   event.preventDefault()
   const id = $(this).attr('data-id')
-  console.log('i clicked', id)
   $(this).closest('li').hide()
   api.deleteWorkout(id)
   .then(ui.deleteWorkoutsSuccess)
@@ -34,7 +33,6 @@ const onDeleteSingleWorkout = function (event) {
 }
 const onToggleUpdate = function (event) {
   event.preventDefault()
-  console.log('Toggling update div ')
   const id = $(this).attr('data-id')
   $('#updateForm' + id).slideToggle()
   // $('#updateSuccess' + id).slideToggle()
@@ -43,10 +41,8 @@ const onSubmitUpdate = function (event) {
   event.preventDefault()
   const id = $(this).attr('id')
   const data = getFormFields(this)
-  console.log(data)
-  console.log('updating: ', id)
-  console.log(this)
   $(this).closest('div').slideToggle()
+  $('#updateSuccess' + id).slideToggle()
   api.updateWorkout(id, data)
   .then(ui.updateWorkoutsSuccess)
   .catch(ui.failure)
