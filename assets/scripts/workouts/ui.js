@@ -30,12 +30,34 @@ const getWorkoutsSuccess = (data) => {
   })
   $('.workoutInfo').html(showWorkoutsHtml)
   $('.showWorkoutForm').css('display', 'block')
+  const array = data
+  console.log(array)
+
+  // function arrSum (array) {
+  //   let sum = 0
+  //   // iterate array using forEach, better to use for loop since it have higher performance
+  //   array.forEach(function (v) {
+  //     // checking array element is an array
+  //     if (typeof v === 'object') {
+  //       // if array then getting sum it's element (recursion)
+  //       sum += arrSum(v)
+  //     } else {
+  //       // else adding the value with sum
+  //       sum += v
+  //     }
+  //   })
+  //   // returning the result
+  //   return sum
+  // }
+  // console.log(arrSum(array))
 }
 const clearWorkouts = () => {
   $('.showWorkoutForm').css('display', 'none')
+  $('#bicep').css('display', 'none')
 }
 const createWorkoutsSuccess = (data) => {
   $('#workoutForm').trigger('reset')
+  $('#bicep').css('display', 'block')
   console.log('create success', data)
 }
 const deleteWorkoutsSuccess = (data) => {
