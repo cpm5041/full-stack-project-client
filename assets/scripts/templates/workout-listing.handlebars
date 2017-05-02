@@ -1,9 +1,9 @@
 <ul>
   {{#each workouts as |workout|}}
-    <li data-id: "{{this.id}}" data-name="{{this.name}}" class='this{{this.id}} col-md-4 list-unstyled text-center'>
+    <li data-id: "{{this.id}}" data-name="{{this.name}}" class='this{{this.id}} col-md-4 updatedWk list-unstyled text-center'>
       <h1>  <small>Workout stats: {{workout.title}}</small></h1>
       <div>
-        <ul class="workouts workoutStats list-unstyled">
+        <ul data-id="{{workout.id}}" class="workouts workoutStats list-unstyled">
           <!-- Default Workout input form -->
           <div>
             <p>Push-ups: {{workout.shups}}</p>

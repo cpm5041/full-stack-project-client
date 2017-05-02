@@ -12,12 +12,39 @@
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
-
-<body class="container">
+  <body>
+  <!-- Navbar -->
+  <div class='nav navbar navbar-default navbar-static-top'>
+    <div class='container'>
+      <a href='#' class='navbar-brand'>Workout Tracker!</a>
+      <ul class='nav navbar-nav navbar-right'>
+        <li>
+          <form class="credentials signOut" id="sign-out">
+            <!-- <i class='glyphicon glyphicon-log-out'></i> -->
+            <fieldset>
+              <!-- <legend>Sign out!</legend> -->
+              <input type='submit' class="btn" value='Sign out!'>
+            </fieldset>
+          </form>
+        </li>
+        <!-- Change pw navbar -->
+        <li>
+          <form class="credentials pw" id="change-password">
+            <!-- <i class='glyphicon glyphicon-wrench'></i> -->
+            <fieldset>
+              <!-- <legend>Change Password</legend> -->
+              <input type="password" name="passwords[old]" value="" placeholder="Old Password">
+              <input type="password" name="passwords[new]" value="" placeholder="New Password">
+              <input type='submit' class="btn" value='Change password!'>
+            </fieldset>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class='container'>
+  <!-- Login -->
   <div class="container-fluid text-center">
-    <!-- <div class='col-md-12'>
-      <h1>Welcome bozo!</h1>
-    </div> -->
     <br>
     <!-- Success notifications -->
     <div class="alert alert-success container" role="alert" id="divCheckbox" style="display: none;">&nbsp;</div>
@@ -53,10 +80,10 @@
         </div>
       </div>
       <!-- Change pw/sign out row -->
-      <div class='container row well' id='loggedInRow' style="display: none;">
-        <!-- <div class='row well'> -->
-        <!-- Sign out -->
-        <div class='col-md-6 form-group'>
+      <!-- <div class='container row well' id='loggedInRow' style="display: none;"> -->
+      <!-- <div class='row well'> -->
+      <!-- Sign out -->
+      <!-- <div class='col-md-6 form-group'>
           <form class="credentials signOut" id="sign-out">
             <i class='glyphicon glyphicon-log-out'></i>
             <fieldset>
@@ -64,9 +91,9 @@
               <input type='submit' class="btn" value='Sign out!'>
             </fieldset>
           </form>
-        </div>
-        <!-- Change password -->
-        <div class='col-md-6 form-group'>
+        </div> -->
+      <!-- Change password -->
+      <!-- <div class='col-md-6 form-group'>
           <form class="credentials pw" id="change-password">
             <i class='glyphicon glyphicon-wrench'></i>
             <fieldset>
@@ -76,13 +103,13 @@
               <input type='submit' class="btn" value='Change password!'>
             </fieldset>
           </form>
-        </div>
-        <!-- </div> -->
-      </div>
+        </div> -->
+      <!-- </div> -->
+      <!-- </div>  -->
       <!-- End of credentials -->
-      <button id="helpButton" class="btn btn-default helpButton"  data-toggle="tooltip" title="First timer? Check out some tips!">WTF is a burpee?!</button>
+      <button id="helpButton" class="btn btn-default helpButton" data-toggle="tooltip" title="First timer? Check out some tips!">WTF is a burpee?!</button>
       <!-- Motivation button -->
-      <button id="motivationButton" class="btn btn-default helpButton"  data-toggle="tooltip" title="Not feelin it? check this out    !">I need some motivation!</button>
+      <button id="motivationButton" class="btn btn-default helpButton" data-toggle="tooltip" title="Not feelin it? check this out    !">I need some motivation!</button>
       <!-- Help video div -->
       <div id='videos' class='container' style="display: none; margin:0 auto;">
         <!-- Pushup video div 16:9 aspect ratio -->
@@ -121,22 +148,6 @@
           <button id="getWorkoutsButton" class="btn btn-default apiButton">Get Workouts!</button>
           <button id="clearWorkoutsButton" class="btn btn-default apiButton">Hide Workouts!</button>
         </div>
-        <!-- Workout stats jumbotron -->
-        <div id='workoutStats' class="jumbotron" style="display: none; margin:0 auto;">
-          <h1>Workout Stats!</h1>
-          <h2 id='shupStats'></h2>
-          <h2 id='squatStats'></h2>
-          <h2 id='burpeeStats'></h2>
-        </div>
-        <!-- bicep gif -->
-        <br>
-        <div class='container col-md-12'>
-          <iframe id='bicep' style="display: none; margin:0 auto;" src="//giphy.com/embed/l44Qzitb3pPAlzZ8A" width="480" height="263" frameBorder="0" allowFullScreen></iframe>
-          <p>
-            <a class="img-responsive" href="https://giphy.com/gifs/ben-l-arnold-predator-l44Qzitb3pPAlzZ8A"></a>
-          </p>
-          <!-- <img src='../assets/images/arnoldbicep.gif' id='bicep' style="display: none; margin:0 auto;" alt="Loading" title="Loading" /> -->
-        </div>
         <!-- Workout Content body -->
         <div id='tracker'>
           <div class="container col-md-12 tracker">
@@ -145,17 +156,35 @@
               <h2>Feelin swole? Track a workout <button type='button' id='track' class="btn btn-primary">Track!</button></h2>
             </div>
           </div>
+          <!-- bicep gif -->
+          <br>
+          <div class='container col-md-12'>
+            <iframe id='bicep' style="display: none; margin:0 auto;" src="//giphy.com/embed/l44Qzitb3pPAlzZ8A" width="480" height="263" frameBorder="0" allowFullScreen></iframe>
+            <p>
+              <a class="img-responsive" href="https://giphy.com/gifs/ben-l-arnold-predator-l44Qzitb3pPAlzZ8A"></a>
+            </p>
+            <!-- <img src='../assets/images/arnoldbicep.gif' id='bicep' style="display: none; margin:0 auto;" alt="Loading" title="Loading" /> -->
+          </div>
           <!-- Workout input form -->
           <div class='container form-group text-center' style="display: none;" id='workoutDiv'>
             <form id='workoutForm'>
               <input id='shupsInput' type="text" name="workout[shups]" value="" placeholder="# of 'shups" data-toggle="tooltip" title="For tips click the WTF is a burpee button!" required>
-              <input id='squatsInput' type="text" name="workout[squats]" value="" placeholder="# of squats" data-toggle="tooltip" title="For tips click the WTF is a burpee button!"required>
+              <input id='squatsInput' type="text" name="workout[squats]" value="" placeholder="# of squats" data-toggle="tooltip" title="For tips click the WTF is a burpee button!" required>
               <input id='burpeesInput' type="text" name="workout[burpees]" value="" placeholder="# of burpees" data-toggle="tooltip" title="For tips click the WTF is a burpee button!" required>
               <br>
               <input id='saveWorkout' type='submit' class="btn btn-primary" value='Save workout!'>
             </form>
           </div>
         </div>
+        <!-- Workout stats jumbotron -->
+        <br>
+        <div id='workoutStats' class="jumbotron" style="display: none; margin:0 auto;">
+          <h1>Workout Stats!</h1>
+          <h2 id='shupStats'></h2>
+          <h2 id='squatStats'></h2>
+          <h2 id='burpeeStats'></h2>
+        </div>
+        <br>
         <!-- Get workout form -->
         <div style="display: none;" class='showWorkoutForm container well text-center'>
           <div id="content" class="workoutInfo text-center"></div>
@@ -163,7 +192,7 @@
       </div>
     </div>
   </div>
-
+</div>
 </body>
 
 </html>
