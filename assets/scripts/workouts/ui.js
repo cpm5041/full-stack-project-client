@@ -9,6 +9,8 @@ const getWorkoutsSuccess = (data) => {
   })
   $('.workoutInfo').html(showWorkoutsHtml)
   $('.showWorkoutForm').css('display', 'block')
+  $('#divCheckbox').css('display', 'none')
+  $('#divCheckboxFailure').css('display', 'none')
   const array = data.workouts
   addWorkouts(array)
 }
