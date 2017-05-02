@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Shup Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container">
+  <div class="container-fluid text-center">
+    <!-- <div class='col-md-12'>
+      <h1>Welcome bozo!</h1>
+    </div> -->
+    <br>
+    <!-- Success notifications -->
+    <div class="alert alert-success container" role="alert" id="divCheckbox" style="display: none;">&nbsp;</div>
+    <!-- Error notifications -->
+    <div class="alert alert-danger container" role="alert" id="divCheckboxFailure" style="display: none;">&nbsp;</div>
+    <div class='container'>
+      <!-- Sign up/in row -->
+      <div class='row well' id='signUpRow'>
+        <!-- Sign up -->
+        <div class='col-md-6 form-group'>
+          <form class="credentials sign-up" id="sign-up">
+            <i class='glyphicon glyphicon-pencil'></i>
+            <fieldset>
+              <legend>Sign up to get jack3d!</legend>
+              <input type="text" name="credentials[email]" value="" placeholder="email">
+              <input type="password" name="credentials[password]" id='pwInput' value="" placeholder="password">
+              <input type="password" name="credentials[password_confirmation]" id='pwInputConf' value="" placeholder="password confirmation">
+              <input type='submit' name='submit' class="credentials btn btn-default" value='Sign up!'>
+            </fieldset>
+          </form>
+        </div>
+        <!-- Sign in -->
+        <div class='col-md-6 form-group'>
+          <form class="credentials" id="sign-in">
+            <i class='glyphicon glyphicon-user'></i>
+            <fieldset>
+              <legend>Sign in!</legend>
+              <input type="text" name="credentials[email]" value="" placeholder="email">
+              <input type="password" name="credentials[password]" value="" placeholder="password">
+              <input type='submit' class="btn btn-primary" value='Sign in!'>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <!-- Change pw/sign out row -->
+      <div class='container row well' id='loggedInRow' style="display: none;">
+        <!-- <div class='row well'> -->
+        <!-- Sign out -->
+        <div class='col-md-6 form-group'>
+          <form class="credentials signOut" id="sign-out">
+            <i class='glyphicon glyphicon-log-out'></i>
+            <fieldset>
+              <legend>Sign out!</legend>
+              <input type='submit' class="btn" value='Sign out!'>
+            </fieldset>
+          </form>
+        </div>
+        <!-- Change password -->
+        <div class='col-md-6 form-group'>
+          <form class="credentials pw" id="change-password">
+            <i class='glyphicon glyphicon-wrench'></i>
+            <fieldset>
+              <legend>Change Password</legend>
+              <input type="password" name="passwords[old]" value="" placeholder="Old Password">
+              <input type="password" name="passwords[new]" value="" placeholder="New Password">
+              <input type='submit' class="btn" value='Change password!'>
+            </fieldset>
+          </form>
+        </div>
+        <!-- </div> -->
+      </div>
+      <!-- End of credentials -->
+      <button id="helpButton" class="btn btn-default helpButton"  data-toggle="tooltip" title="First timer? Check out some tips!">WTF is a burpee?!</button>
+      <!-- Motivation button -->
+      <button id="motivationButton" class="btn btn-default helpButton"  data-toggle="tooltip" title="Not feelin it? check this out    !">I need some motivation!</button>
+      <!-- Help video div -->
+      <div id='videos' class='container' style="display: none; margin:0 auto;">
+        <!-- Pushup video div 16:9 aspect ratio -->
+        <div id='shupVid' class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Eh00_rniF8E"></iframe>
+        </div>
+        <br>
+        <!-- Squat video div 16:9 aspect ratio -->
+        <div id='squatVid' class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/C_VtOYc6j5c"></iframe>
+        </div>
+        <br>
+        <!-- Burpee video div 16:9 aspect ratio -->
+        <div id='burpeeVid' class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/B3pfaQ2sDPA"></iframe>
+        </div>
+      </div>
+      <br>
+
+      <!-- Motivation div -->
+      <div id='motivation' class='container' style="display: none; margin:0 auto;">
+        <!-- Pushup video div 16:9 aspect ratio -->
+        <div id='shupVid' class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/I33u_EHLI3w"></iframe>
+        </div>
+        <!-- Pushup video div 16:9 aspect ratio -->
+        <div id='shupVid' class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/pBLV6RG4TwY"></iframe>
+        </div>
+      </div>
+      <br>
+      <!--  beginning of contentBody -->
+      <div class "container col-md-12" id='contentBody'>
+        <!-- Lets rage, tracker button -->
+        <div class="container-fluid">
+          <button id="getWorkoutsButton" class="btn btn-default apiButton">Get Workouts!</button>
+          <button id="clearWorkoutsButton" class="btn btn-default apiButton">Hide Workouts!</button>
+        </div>
+        <!-- Workout stats jumbotron -->
+        <div id='workoutStats' class="jumbotron" style="display: none; margin:0 auto;">
+          <h1>Workout Stats!</h1>
+          <h2 id='shupStats'></h2>
+          <h2 id='squatStats'></h2>
+          <h2 id='burpeeStats'></h2>
+        </div>
+        <!-- bicep gif -->
+        <br>
+        <div class='container col-md-12'>
+          <iframe id='bicep' style="display: none; margin:0 auto;" src="//giphy.com/embed/l44Qzitb3pPAlzZ8A" width="480" height="263" frameBorder="0" allowFullScreen></iframe>
+          <p>
+            <a class="img-responsive" href="https://giphy.com/gifs/ben-l-arnold-predator-l44Qzitb3pPAlzZ8A"></a>
+          </p>
+          <!-- <img src='../assets/images/arnoldbicep.gif' id='bicep' style="display: none; margin:0 auto;" alt="Loading" title="Loading" /> -->
+        </div>
+        <!-- Workout Content body -->
+        <div id='tracker'>
+          <div class="container col-md-12 tracker">
+            <h1>Let's Rage.</h1>
+            <div class='container text-center'>
+              <h2>Feelin swole? Track a workout <button type='button' id='track' class="btn btn-primary">Track!</button></h2>
+            </div>
+          </div>
+          <!-- Workout input form -->
+          <div class='container form-group text-center' style="display: none;" id='workoutDiv'>
+            <form id='workoutForm'>
+              <input id='shupsInput' type="text" name="workout[shups]" value="" placeholder="# of 'shups" data-toggle="tooltip" title="For tips click the WTF is a burpee button!" required>
+              <input id='squatsInput' type="text" name="workout[squats]" value="" placeholder="# of squats" data-toggle="tooltip" title="For tips click the WTF is a burpee button!"required>
+              <input id='burpeesInput' type="text" name="workout[burpees]" value="" placeholder="# of burpees" data-toggle="tooltip" title="For tips click the WTF is a burpee button!" required>
+              <br>
+              <input id='saveWorkout' type='submit' class="btn btn-primary" value='Save workout!'>
+            </form>
+          </div>
+        </div>
+        <!-- Get workout form -->
+        <div style="display: none;" class='showWorkoutForm container well text-center'>
+          <div id="content" class="workoutInfo text-center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
