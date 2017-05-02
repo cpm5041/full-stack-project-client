@@ -49,6 +49,10 @@ const onHelpVideos = function (event) {
   event.preventDefault()
   $('#videos').slideToggle()
 }
+const onMotivation = function (event) {
+  event.preventDefault()
+  $('#motivation').slideToggle()
+}
 const addHandlers = () => {
   $('#getWorkoutsButton').on('click', onGetWorkouts)
   $('#workoutForm').on('submit', onCreateWorkouts)
@@ -56,7 +60,10 @@ const addHandlers = () => {
   $('.showWorkoutForm').on('click', '.deleteButton', onDeleteSingleWorkout)
   $('.showWorkoutForm').on('click', '.updateButton', onToggleUpdate)
   $('.showWorkoutForm').on('submit', '.updateForm', onSubmitUpdate)
+  // Trying to refresh workouts upon update
+  $('.showWorkoutForm').on('submit', '.updateForm', onGetWorkouts)
   $('#helpButton').on('click', onHelpVideos)
+  $('#motivationButton').on('click', onMotivation)
   $('[data-toggle="tooltip"]').tooltip()
   // $('#updateInput').on('submit', onSubmitUpdate)
 }

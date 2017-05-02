@@ -27,6 +27,7 @@ Be sure to visit the above links for api information and project requirements.
   - Containers
   - Navbar
   - Icons
+  - tooltips
 
 ## User Stories
 
