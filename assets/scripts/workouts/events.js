@@ -41,6 +41,7 @@ const onSubmitUpdate = function (event) {
   const data = getFormFields(this)
   $(this).closest('div').slideToggle()
   $('#updateSuccess' + id).css('display', 'block')
+  // $(this + id).html(data)
   api.updateWorkout(id, data)
   .then(ui.updateWorkoutsSuccess)
   .catch(ui.failure)
@@ -63,7 +64,7 @@ const addHandlers = () => {
   $('.showWorkoutForm').on('submit', '.updateForm', onSubmitUpdate)
   $('#helpButton').on('click', onHelpVideos)
   $('#motivationButton').on('click', onMotivation)
-  $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="tooltip"]').tooltip({trigger: 'hover'})
   // $('#updateInput').on('submit', onSubmitUpdate)
 }
 
