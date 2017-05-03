@@ -5,7 +5,7 @@ const ui = require('./ui.js')
 const getFormFields = require(`../../../lib/get-form-fields`)
 
 const onGetWorkouts = (event) => {
-  event.preventDefault()
+  // event.preventDefault()
   api.getWorkouts()
     .then(ui.getWorkoutsSuccess)
     .catch(ui.failure)
@@ -21,6 +21,7 @@ const onCreateWorkouts = function (event) {
   api.createWorkouts(data)
     .then(ui.createWorkoutsSuccess)
     .catch(ui.failure)
+    .done(onGetWorkouts)
 }
 const onDeleteSingleWorkout = function (event) {
   event.preventDefault()
@@ -45,6 +46,7 @@ const onSubmitUpdate = function (event) {
   api.updateWorkout(id, data)
   .then(ui.updateWorkoutsSuccess)
   .catch(ui.failure)
+  .done(onGetWorkouts)
 }
 const onHelpVideos = function (event) {
   event.preventDefault()
