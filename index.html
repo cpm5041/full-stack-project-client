@@ -79,33 +79,6 @@
           </form>
         </div>
       </div>
-      <!-- Change pw/sign out row -->
-      <!-- <div class='container row well' id='loggedInRow' style="display: none;"> -->
-      <!-- <div class='row well'> -->
-      <!-- Sign out -->
-      <!-- <div class='col-md-6 form-group'>
-          <form class="credentials signOut" id="sign-out">
-            <i class='glyphicon glyphicon-log-out'></i>
-            <fieldset>
-              <legend>Sign out!</legend>
-              <input type='submit' class="btn" value='Sign out!'>
-            </fieldset>
-          </form>
-        </div> -->
-      <!-- Change password -->
-      <!-- <div class='col-md-6 form-group'>
-          <form class="credentials pw" id="change-password">
-            <i class='glyphicon glyphicon-wrench'></i>
-            <fieldset>
-              <legend>Change Password</legend>
-              <input type="password" name="passwords[old]" value="" placeholder="Old Password">
-              <input type="password" name="passwords[new]" value="" placeholder="New Password">
-              <input type='submit' class="btn" value='Change password!'>
-            </fieldset>
-          </form>
-        </div> -->
-      <!-- </div> -->
-      <!-- </div>  -->
       <!-- End of credentials -->
       <button id="helpButton" class="btn btn-default helpButton" data-toggle="tooltip" title="First timer? Check out some tips!">WTF is a burpee?!</button>
       <!-- Motivation button -->
@@ -168,9 +141,9 @@
           <!-- Workout input form -->
           <div class='container form-group text-center' style="display: none;" id='workoutDiv'>
             <form id='workoutForm'>
-              <input id='shupsInput' type="text" name="workout[shups]" value="" placeholder="# of 'shups" data-toggle="tooltip" title="For tips click the WTF is a burpee button!" required>
-              <input id='squatsInput' type="text" name="workout[squats]" value="" placeholder="# of squats" data-toggle="tooltip" title="For tips click the WTF is a burpee button!" required>
-              <input id='burpeesInput' type="text" name="workout[burpees]" value="" placeholder="# of burpees" data-toggle="tooltip" title="For tips click the WTF is a burpee button!" required>
+              <input id='shupsInput' type="number" min="0" name="workout[shups]" value="" placeholder="# of 'shups" data-toggle="tooltip" title="For tips click the WTF is a burpee button!" required>
+              <input id='squatsInput' type="number" min="0" name="workout[squats]" value="" placeholder="# of squats" data-toggle="tooltip" title="For tips click the WTF is a burpee button!" required>
+              <input id='burpeesInput' type="number" min="0" name="workout[burpees]" value="" placeholder="# of burpees" data-toggle="tooltip" title="For tips click the WTF is a burpee button!" required>
               <br>
               <input id='saveWorkout' type='submit' class="btn btn-primary" value='Save workout!'>
             </form>

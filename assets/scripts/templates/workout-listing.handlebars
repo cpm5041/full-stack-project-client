@@ -16,9 +16,9 @@
           <!-- Update Workout input form -->
           <div data-id="{{workout.id}}" id="updateForm{{workout.id}}"class='form-group updateDiv text-center'style='display: none'>
             <form id="{{workout.id}}" class='text-center form-group updateForm'>
-              <p><input id='updateShupsInput' type="text" name="workout[shups]" value="{{workout.shups}}" placeholder="# of 'shups" required></p>
-              <p><input id='updateSquatsInput' type="text" name="workout[squats]" value="{{workout.squats}}" placeholder="# of squats" required></p>
-              <p><input id='updateBurpeesInput' type="text" name="workout[burpees]" value="{{workout.burpees}}" placeholder="# of burpees" required></p>
+              <p><input id='updateShupsInput' type="number" min="0" name="workout[shups]" value="{{workout.shups}}" placeholder="# of 'shups" required></p>
+              <p><input id='updateSquatsInput' type="number" min="0" name="workout[squats]" value="{{workout.squats}}" placeholder="# of squats" required></p>
+              <p><input id='updateBurpeesInput' type="number" min="0" name="workout[burpees]" value="{{workout.burpees}}" placeholder="# of burpees" required></p>
               <br>
               <p><input id="{{workout.id}}" data-id="{{workout.id}}" type='submit' class="btn btn-primary text-center saveUpdate" value='Update workout!'></p>
             </form>
