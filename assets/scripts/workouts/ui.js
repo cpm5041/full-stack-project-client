@@ -48,6 +48,7 @@ const clearWorkouts = () => {
 const createWorkoutsSuccess = (data) => {
   $('#workoutForm').trigger('reset')
   $('#bicep').css('display', 'block')
+  $('#workoutButtons').css('display', 'block')
 }
 const deleteWorkoutsSuccess = (data) => {
   console.log('clearing single workout')

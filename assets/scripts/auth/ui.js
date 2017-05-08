@@ -57,6 +57,7 @@ const signOutSuccess = () => {
   $('.showWorkoutForm').css('display', 'none')
   $('.showWorkoutForm').trigger('reset')
   $('#bicep').css('display', 'none')
+  $('#workoutButtons').css('display', 'none')
   $('#workoutStats').css('display', 'none')
   store.user = null
 }
